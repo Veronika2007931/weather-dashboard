@@ -11,6 +11,7 @@ export const App = () => {
       }}
     >
       React homework template
+      <h1>title</h1>
     </div>
   );
 };
