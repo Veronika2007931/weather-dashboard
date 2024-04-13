@@ -1,10 +1,10 @@
 const theme = { 
     color: { 
-      mainTextColor: #000, 
-      componetsBgc:#E8E8E8, 
-      secondaryComponentsBgc:#D9D9D9, 
-      white: #FFF, 
-      btnColor: #FFB36C, 
+      mainTextColor: '#000', 
+      componetsBgc:'#E8E8E8', 
+      secondaryComponentsBgc:'#D9D9D9', 
+      white: '#FFF', 
+      btnColor: '#FFB36C', 
    
     }, 
    
