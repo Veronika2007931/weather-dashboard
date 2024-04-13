@@ -6,6 +6,12 @@ import {ThemeProvider} from "styled-components"
 import {theme} from "./theme.jsx"
 
 
+const theme = {
+  color:(
+    
+  )
+}
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode >
