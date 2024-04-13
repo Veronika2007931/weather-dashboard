@@ -4,13 +4,10 @@ import { App } from 'components/App';
 import './index.css';
 
 
-const theme = {
-  
-}
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode theme={theme}>
+  // <React.StrictMode theme={theme}>
     <App />
-  </React.StrictMode>
+  // </React.StrictMode>
 );

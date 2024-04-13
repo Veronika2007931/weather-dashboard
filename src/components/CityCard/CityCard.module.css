@@ -1,0 +1,131 @@
+.cityCard {
+  width: 320px;
+  height: 430px;
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cityInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cityName {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17.07px;
+  text-align: left;
+  margin: 0;
+}
+
+.countryName {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17.07px;
+  text-align: right;
+  margin: 0;
+}
+
+.time {
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29.26px;
+  text-align: center;
+  margin: 0;
+}
+
+.date {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17.07px;
+  text-align: center;
+  margin: 0;
+}
+
+.temperature {
+  font-family: Montserrat;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 39.01px;
+  text-align: center;
+  margin: 0;
+}
+
+.weatherIcon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  display: block;
+}
+
+.forecastLinks {
+  display: flex;
+  justify-content: space-between;
+}
+
+.forecastButton {
+  width: 114px;
+  height: 28px;
+  padding: 8px 18px;
+  border-radius: 10px 0 0 0;
+  background-color: #FFB36C;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #FFffff;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(188, 181, 181);
+}
+
+.favoriteActive {
+  color: red;
+}
+.cityList {
+  margin-top: 20px;
+}
+
+
+.cityCard {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.cityName {
+  margin: 0;
+}
+
+.deleteButton {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
