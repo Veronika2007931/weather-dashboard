@@ -5,9 +5,7 @@ import './index.css';
 
 
 const theme = {
-  color:(
-
-  )
+  
 }
 
 
