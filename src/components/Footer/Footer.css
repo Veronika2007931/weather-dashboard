@@ -1,0 +1,28 @@
+.footer{
+    background-color: #FFB36C;
+    width: 100%;
+
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.logo{
+}
+
+.list{
+    width: 8%;
+    display: flex;
+    justify-content: center;
+}
+
+ul{
+    padding: 0;
+    list-style: none;
+}
+
+li {
+
+}
