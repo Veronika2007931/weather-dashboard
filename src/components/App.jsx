@@ -1,3 +1,4 @@
+import Search from "./Search";
 export const App = () => {
   return (
     <div
@@ -12,6 +13,7 @@ export const App = () => {
     >
       React homework template
       <h1>title</h1>
+      <Search></Search>
     </div>
   );
 };

@@ -4,11 +4,11 @@ import { App } from 'components/App';
 import './index.css';
 
 
-const theme = {
-  color:(
+// const theme = {
+//   color:(
 
-  )
-}
+//   )
+// }
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
