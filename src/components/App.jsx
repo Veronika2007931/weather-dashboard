@@ -1,5 +1,5 @@
 
-import { WeatherFW } from "WeatherForWeek/WeatherFW";
+import { WeatherFW } from "components/WeatherForWeek/WeatherFW";
 import { Header } from "./Header/Header"
 
 
