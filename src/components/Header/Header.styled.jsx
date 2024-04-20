@@ -21,10 +21,18 @@ export const HeadMenu = styled.ul`
     & li:not(:first-child){
         margin-left: 45px;
     }
+    & li a{
+        color: black;
+        text-decoration: none;
+    }
 `
 export const SingInMenu = styled.div`
     display: flex;
     margin-left:auto;
+    & span{
+        margin: auto 0;
+        font-size: 24px;
+    }
     & div{
         margin: auto;
         margin-left: 25px;
