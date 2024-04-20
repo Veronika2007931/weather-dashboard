@@ -6,17 +6,17 @@ import {ThemeProvider} from "styled-components"
 import {theme} from "./theme.jsx"
 
 
-const theme = {
-  color:(
+// const theme = {
+//   color:(
     
-  )
-}
+//   )
+// }
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode >
-    <ThemeProvider theme={theme}>
+    {/* <ThemeProvider theme={theme}> */}
     <App />
-    </ThemeProvider>
+    {/* </ThemeProvider> */}
   </React.StrictMode>
 );
