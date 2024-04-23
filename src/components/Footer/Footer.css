@@ -1,28 +1,157 @@
 .footer{
     background-color: #FFB36C;
     width: 100%;
+    height: 179px;
 
+    .container{
+        display: flex;
+        gap: 6%;
+        padding: 0.5% 0 0 6%;
+
+        .logo{
+            padding: 1% 0 0 1%;
+        }
+
+        .content{
+
+            .list{
+                width: 8%;
+    
+                ul{
+                    padding: 0;
+                    list-style: none;
+                }
+            }
+    
+            .contact{
+                width: 10%;
+    
+                .messenger{
+                    display: flex;
+                    gap: 12%;
+                }
+            }
+        }
+    }
 }
 
-.container{
-    display: flex;
-    justify-content: center;
+@media screen and (max-width: 834px) {
+
+    .footer{
+        width: 100%;
+        height: 138px;
+
+        .container{
+            gap: 12%;
+            padding: 1.5% 0 0 10%;
+
+            .logo{
+                padding: 2% 0 0 0;
+
+                img{
+                    width: 58px;
+                }
+            }
+
+            .content{
+
+                .list{
+                    width: 10%;
+            
+                    ul{
+            
+                        h4{
+                            font-size: 14px;
+                        }
+    
+                        li{
+                            font-size: 10px;
+                        }
+                    }
+                }
+    
+                .contact{
+                    width: 20%;
+            
+                    .subtitle{
+            
+                        h4{
+                            font-size: 14px;
+                        }
+                    }
+    
+                    .messenger{
+                        gap: 13%;
+    
+                        img{
+                            width: 35px;
+                        }
+                    }
+                }
+            }
+        }
+    }   
 }
 
-.logo{
-}
+@media screen and (max-width: 393px) {
 
-.list{
-    width: 8%;
-    display: flex;
-    justify-content: center;
-}
+    .footer{
+        width: 100%;
+        height: 212px;
 
-ul{
-    padding: 0;
-    list-style: none;
-}
+        .container{
+            gap: 0%;
+            padding: 0 0 0 0;
 
-li {
+            .logo{
+                padding: 0% 0 0 0;
 
+                img{
+                    width: 50px;
+                }
+            }
+
+            .content{
+                width: 65%;
+                display: flex;
+                flex-direction: column;
+
+                .list{
+                    width: 25%;
+                    
+            
+                    ul{
+            
+                        h4{
+                            font-size: 12px;
+                        }
+    
+                        li{
+                            font-size: 8px;
+                        }
+                    }
+                }
+    
+                .contact{
+                    width: 50%;
+            
+                    .subtitle{
+            
+                        h4{
+                            text-align: center;
+                            font-size: 12px;
+                        }
+                    }
+    
+                    .messenger{
+                        gap: 9%;
+    
+                        img{
+                            width: 35px;
+                        }
+                    }
+                }
+            }        
+        }
+    }   
 }
