@@ -25,9 +25,9 @@ export function Footer(){
                                 <h4>Contact us</h4>
                             </div>
                             <div className='messenger'>
-                                <img src={instagram} alt="" />
-                                <img src={facebook}alt="" />
-                                <img src={whatsapp} alt="" />
+                                <button><img src={instagram} alt="" /></button>
+                                <button><img src={facebook}alt="" /></button>
+                                <button><img src={whatsapp} alt="" /></button>
                             </div>
                         </div>
                     </div>
