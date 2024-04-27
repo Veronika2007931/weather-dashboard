@@ -12,13 +12,24 @@ export const Backdrop = styled.div`
 `
 export const ModalBody = styled.form`
     text-align: center;
-    padding: 28px 80px;
-    border-radius: 50px;
+    border-radius: 25px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: #FFFFFF;
+    @media screen and (min-width: ${(p)=>p.theme.breakpoints.mobile}){
+        font-size:12px;
+        padding: 25px 25px;
+    } 
+    @media screen and (min-width: ${(p)=>p.theme.breakpoints.tablet}){
+        font-size:12px;
+        padding: 22px 45px;
+    } 
+    @media screen and (min-width: ${(p)=>p.theme.breakpoints.desktop}){
+        font-size:14px;
+        padding: 28px 80px;
+    }
 `
 export const ModalInfo = styled.ul`
     list-style:none;
@@ -29,14 +40,22 @@ export const ModalInfo = styled.ul`
 `
 export const ModalTitle = styled.h2`
     margin: 0;  
-    margin-bottom: 40px; 
-    font-weight: 400;
-    font-size: 48px;
     line-height: 58px;
+    @media screen and (min-width: ${(p)=>p.theme.breakpoints.mobile}){
+        font-size:20px;
+        margin-bottom: 17px;
+        height: 24px; 
+    } 
+    @media screen and (min-width: ${(p)=>p.theme.breakpoints.desktop}){
+        height: 34px;
+        font-size:28px;
+        margin-bottom: 40px; 
+    }
 `
 export const ModalBtn = styled.button`
     padding: 10px 30px;
     font-size: 14px;
+    font-weight: 400;
     margin-top: 35px;
     height: min-content;
     background-color: #FFB36C;
@@ -44,19 +63,27 @@ export const ModalBtn = styled.button`
     border-radius: 10px;
 `
 export const FieldsItem = styled.li`
-    margin-top: 30px;
-    font-weight:600;
     & input{
         border-radius: 10px;
         border: none;
         background: #F5F5F5;
         width: 100%;
-        height: 50px;
         padding-left: 16px;
         margin-top: 15px;
-        &:focus{
-            outline: none;
-        }
+    &:focus{
+        outline: none;
+    }
+    @media screen and (min-width: ${(p)=>p.theme.breakpoints.mobile}){
+        height: 40px;
+    } 
+    @media screen and (min-width: ${(p)=>p.theme.breakpoints.desktop}){
+        height: 50px;
+    }}
+    @media screen and (min-width: ${(p)=>p.theme.breakpoints.mobile}){
+        margin-top: 25px;
+    } 
+    @media screen and (min-width: ${(p)=>p.theme.breakpoints.desktop}){
+        margin-top: 30px;
     }
 `
 /* 
