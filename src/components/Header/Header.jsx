@@ -7,8 +7,15 @@ export const Header=()=>{
     const [account, newAcc]=useState(null)
     const switchModal=()=>{
         shown(!showModal)
-        console.log(showModal)
     }
+    const check=(func)=>{
+        const info = JSON.parse(localStorage.getItem('accInfo'))
+        return info?info.name&&info.mail&&info.pass?true:false:false
+    }
+    useEffect(()=>{
+        const info = JSON.parse(localStorage.getItem('accInfo'))
+        check()&&newAcc(info)
+    },[])
     return(
         <HeadSection>
                 <Logo href="/#" type="button"></Logo>
@@ -21,7 +28,7 @@ export const Header=()=>{
                     {account?<span>{account.name}</span>:<button type="button">Sing up</button>}
                     <div></div>
                 </SingInMenu>
-                {showModal&&<Modal closeModal={switchModal} regis={newAcc}/>}
+                {showModal&&<Modal closeModal={switchModal} regis={newAcc} check={check}/>}
         </HeadSection>
     )
 }

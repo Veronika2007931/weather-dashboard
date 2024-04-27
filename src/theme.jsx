@@ -1,4 +1,4 @@
-const theme = { 
+export const theme = { 
     color: { 
       mainTextColor: '#000', 
       componetsBgc:'#E8E8E8', 
