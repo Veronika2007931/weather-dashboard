@@ -7,7 +7,8 @@ export const Container = styled.div`
     top: 2513px;
     gap: 0px;
     border-radius: 20px;
-    margin-left: 160px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 7px;
 `
 
