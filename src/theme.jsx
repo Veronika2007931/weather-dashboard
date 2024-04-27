@@ -20,5 +20,8 @@ export const theme = {
        mobile : '320px ', 
        tablet  : '768px', 
        desktop : '1200px' 
-    }   
+    },   
+
+
+   
   }
