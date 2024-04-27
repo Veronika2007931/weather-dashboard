@@ -1,28 +1,17 @@
 
-import { Component } from "react";
-import { Footer } from "./Footer/Footer"
-
-export class App extends Component{
-    render(){
-        return(
-            <Footer/>
-        )
-    }
-}
-
-
-import { WeatherFW } from "components/WeatherForWeek/WeatherFW";
 import { Header } from "./Header/Header"
-
+import { WeatherFW } from "components/WeatherForWeek/WeatherFW";
+import { Footer } from "./Footer/Footer"
+import {Container} from "../Container.styled"
 
 
 export const App = () => {
   return (
-    <div>
+    <Container>
       <Header/>
       <WeatherFW/>
-
-    </div>
+      <Footer/>
+    </Container>
   );
 };
 
