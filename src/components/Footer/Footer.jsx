@@ -1,4 +1,4 @@
-import './Footer.css';
+import FooterContainer from './Footer.styled';
 import Logo from '../../img/logo 2.png';
 import instagram from '../../img/image6.png';
 import facebook from '../../img/image 7.png';
@@ -6,7 +6,8 @@ import whatsapp from '../../img/whatsapp (2) 1.png';
 
 export function Footer(){
 
-    return <footer className="footer">
+    return <FooterContainer>
+            <footer className="footer">
                 <div className="container">
                     <div className="logo">
                         <img src={Logo} alt="" />
@@ -33,4 +34,7 @@ export function Footer(){
                     </div>
                 </div>
             </footer>
+        </FooterContainer>
 }
+
+export default Footer;
