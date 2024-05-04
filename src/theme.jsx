@@ -1,4 +1,4 @@
-const theme = { 
+export const theme = { 
     color: { 
       mainTextColor: '#000', 
       componetsBgc:'#E8E8E8', 
@@ -20,5 +20,8 @@ const theme = {
        mobile : '320px ', 
        tablet  : '768px', 
        desktop : '1200px' 
-    }   
+    },   
+
+
+   
   }

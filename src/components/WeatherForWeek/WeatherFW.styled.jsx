@@ -3,19 +3,40 @@ import styled from "styled-components"
 export const Container = styled.div`
     background-color: #E8E8E8;
     width: 1140px;
-    height: 554px;
+    height: 580px;
     top: 2513px;
     gap: 0px;
     border-radius: 20px;
-    margin-left: 160px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 7px;
 `
 
 export const List = styled.ul`
     list-style: none;
-    display: flex;
 `
+
 export const Item = styled.li`
     margin: 15px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    display: flex;
+`
+
+export const MainText = styled.p`
+    margin-left: 58px;
+`
+
+export const SecondaryTextDate = styled.p`
+    margin-left: 15px;
+`
+
+export const SecondaryTextWeather = styled.p`
+    margin-left: 200px;
+`
+
+export const SecondaryTextW2 = styled.p`
+    margin-left: 100px;
 `
 
 // fontSizes: {
