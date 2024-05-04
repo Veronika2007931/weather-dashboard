@@ -1,5 +1,4 @@
 import {useState, useEffect} from 'react';
-import './news.css';
 
 import img1 from './img/Rectangle 6.jpg';
 import img2 from './img/Rectangle 7.jpg';
@@ -12,17 +11,26 @@ export function NewsSection() {
     const apiKey = '362c5d90d156483293d8c2e9caa2c142';
 
     useEffect(() => {
-        fetch(`https://newsapi.org/news?key=${apiKey}`)
+        fetch(`https://newsapi.org/v2/everything?q=weather&apiKey=${apiKey}`)
         .then(response => response.json())
         .then(data => setNewsData(data))
         .catch(error => console.error('Error fetching news:', error));
     }, []);
 
+    const updatedNewsData = newsData.splice(0, 6);
+
     return (
     <section className="news-section">
         <h2 className="news-title">Interacting with our pets</h2>
-        <div className="news-container">
-        <div className="news-item">
+
+        {updatedNewsData.map((newsItem, index) => {
+            <div key={index} className="news-item">
+                <img src={newsItem.image} alt={``} />
+                <p>{newsItem.title}</p>
+            </div>
+        })}
+
+        {/* <div className="news-item">
             <img src={img1} alt="News 1" />
             <p>Rescue pups pose as ghosts in festive photo shoot</p>
         </div>
@@ -37,8 +45,7 @@ export function NewsSection() {
         <div className="news-item">
             <img src={img4} alt="News 4" />
             <p>Petting dogs gives health benefit, even if they are not yours</p>
-        </div>
-        </div>
+        </div> */}
         <button className="see-more-btn">See more</button>
     </section>
     );
