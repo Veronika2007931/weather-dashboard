@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import CityCard from './CityCard';
 import styles from './CityList.module.css';
 
-class CityList extends Component {
+export class CityList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -53,6 +53,7 @@ class CityList extends Component {
             key={city}
             city={city}
             onDelete={this.handleDelete}
+            setForecastData={this.props.setForecastData}
           />
         ))}
       </div>

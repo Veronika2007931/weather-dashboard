@@ -40,8 +40,9 @@ class CityCard extends Component {
   };
 
   handleDelete = () => {
-    const { onDelete, city } = this.props;
+    const { onDelete, city, setForecastData } = this.props;
     if (onDelete) {
+      setForecastData(null)
       onDelete(city);
     }
   };
@@ -64,7 +65,7 @@ class CityCard extends Component {
             </div>
             <p className={styles.time}><FiClock /> {new Date().toLocaleTimeString()}</p>
             <div className={styles.forecastLinks}>
-              <button className={styles.forecastButton}><FiLink /> Hourly forecast</button>
+              <button className={styles.forecastButton} onClick={() => this.props.setForecastData(city)}><FiLink /> Hourly forecast</button>
               <button className={styles.forecastButton}><FiLink /> Weekly forecast</button>
             </div>
             <p className={styles.date}>{currentDate}</p>
