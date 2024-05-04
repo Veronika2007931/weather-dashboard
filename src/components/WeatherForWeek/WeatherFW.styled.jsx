@@ -2,7 +2,6 @@ import styled from "styled-components"
 
 export const Container = styled.div`
     background-color: #E8E8E8;
-    width: 1140px;
     height: 580px;
     top: 2513px;
     gap: 0px;
@@ -10,6 +9,19 @@ export const Container = styled.div`
     margin-left: auto;
     margin-right: auto;
     padding: 7px;
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
+        width: ${(p) => p.theme.breakpoints.mobile}
+    }
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
+        width: ${(p) =>  p.theme.breakpoints.tablet}
+    }
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
+        width: ${(p) => p.theme.breakpoints.desktop}
+    }
+   
 `
 
 export const List = styled.ul`
@@ -38,6 +50,8 @@ export const SecondaryTextWeather = styled.p`
 export const SecondaryTextW2 = styled.p`
     margin-left: 100px;
 `
+
+
 
 // fontSizes: {
 // xs: '12px',
