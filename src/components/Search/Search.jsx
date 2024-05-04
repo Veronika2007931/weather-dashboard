@@ -29,7 +29,6 @@ export const Search=()=>{
                     <ButtHero onClick={click} type="button"></ButtHero>
                 </FormHero>
                 {/* <svg><use href={imageSearch}/></svg> */}
-                <ul>{array!==null?(array.map((el,index)=><li key={index}>{el.name}</li>)):(console.log('noth'))}</ul>
             </DivHero2>
         </Hero>
     );
