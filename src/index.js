@@ -12,7 +12,8 @@ import './index.css';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode theme={theme}>
+  <React.StrictMode >
+    {/* theme={theme} */}
     <App />
   </React.StrictMode>
 );
