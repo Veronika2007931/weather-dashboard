@@ -1,8 +1,7 @@
 import { useRef,useCallback,useState } from "react";
 import { Hero,InputHero,ButtHero,DivHero,H1Hero,TextHero, Line,DivHero2,TextHero1, FormHero } from "./Search.styled";
 // import imageSearch from './search_FILL0_wght400_GRAD0_opsz24.svg#icon-Group-3'
-localStorage.clear()
-const Search=()=>{
+export const Search=()=>{
     console.log(imageSearch);
     const r=useRef(null)
     const [array,changeArray]=useState(localStorage.getItem('array')===null?([]):(JSON.parse(localStorage.getItem('array'))))
