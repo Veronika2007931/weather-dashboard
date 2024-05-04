@@ -1,5 +1,3 @@
-
-import { WeatherFW } from "components/WeatherForWeek/WeatherFW";
 import { Header } from "./Header/Header"
 import { WeatherFW } from "components/WeatherForWeek/WeatherFW";
 import { Gallery } from "./TeamGalery/Gallery";
@@ -12,6 +10,7 @@ export const App = () => {
   return (
     <Container>
       <Header/>
+      <Search/>
       <WeatherFW/>
       <Gallery/>
       <Footer/>

@@ -5,7 +5,6 @@ export const Hero=styled.section`
     justify-content:center;
     align-items:center;
     height: 595px;
-    // background-image: url(${bg});
     background-size: cover;
     background-position: center;  
     gap: 0px;

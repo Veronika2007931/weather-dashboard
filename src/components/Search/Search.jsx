@@ -2,21 +2,18 @@ import { useRef,useCallback,useState } from "react";
 import { Hero,InputHero,ButtHero,DivHero,H1Hero,TextHero, Line,DivHero2,TextHero1, FormHero } from "./Search.styled";
 // import imageSearch from './search_FILL0_wght400_GRAD0_opsz24.svg#icon-Group-3'
 export const Search=()=>{
-    console.log(imageSearch);
     const r=useRef(null)
     const [array,changeArray]=useState(localStorage.getItem('array')===null?([]):(JSON.parse(localStorage.getItem('array'))))
     const submit=async(e)=>{
         e.preventDefault();
         await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${r.current.value}&appid=3ca8038fbb40321d1e03df9a10bbb2c2`)
         .then(resp=>resp.json())
-        .then(res=>{changeArray([...array,res])})
-        .finally(()=>{localStorage.setItem('array',JSON.stringify(array))})
+        .then(res=>{changeArray(prev=>{const newA=[...prev,res];localStorage.setItem('array',JSON.stringify(newA));return newA})})
     }
     const click=useCallback(async()=>
         await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${r.current.value}&appid=3ca8038fbb40321d1e03df9a10bbb2c2`)
         .then(resp=>resp.json())
-        .then(res=>{changeArray([...array,res])})
-        .finally(()=>{localStorage.setItem('array',JSON.stringify(array))})
+        .then(res=>{changeArray(prev=>{const newA=[...prev,res];localStorage.setItem('array',JSON.stringify(newA));return newA})})
     ,[array])
     return(
         <Hero>
