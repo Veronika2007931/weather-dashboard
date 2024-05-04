@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Header } from "./Header/Header"
-import { CityList } from "./CityCard/CityList";
+import { CityList } from "./CityCard/CityList.styled";
 import { WeatherFW } from "components/WeatherForWeek/WeatherFW";
 import { Gallery } from "./TeamGalery/Gallery";
 import { Footer } from "./Footer/Footer"
