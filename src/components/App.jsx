@@ -1,19 +1,21 @@
-import Search from "./Search";
+
+import { WeatherFW } from "components/WeatherForWeek/WeatherFW";
+import { Header } from "./Header/Header"
+import { WeatherFW } from "components/WeatherForWeek/WeatherFW";
+import { Gallery } from "./TeamGalery/Gallery";
+import { Footer } from "./Footer/Footer"
+import {Container} from "../Container.styled"
+
+
+
 export const App = () => {
   return (
-    <Search/>
+    <Container>
+      <Header/>
+      <WeatherFW/>
+      <Gallery/>
+      <Footer/>
+    </Container>
   );
 };
-    // <div
-    //   style={{
-    //     height: '100vh',
-    //     display: 'flex',
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    //     fontSize: 40,
-    //     color: '#010101'
-    //   }}
-    // >
-      {/* React homework template
-      <h1>title</h1> */}
-    // </div>
+
