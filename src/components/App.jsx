@@ -1,7 +1,5 @@
 
 import { useState } from "react";
-
-
 import { Header } from "./Header/Header"
 import { CityList } from "./CityCard/CityList.styled";
 import { WeatherFW } from "components/WeatherForWeek/WeatherFW";
@@ -19,12 +17,11 @@ export const App = () => {
   return (
     <Container>
       <Header/>
-
+      <WeatherFW/>
+      <Gallery/>
       <CityList setForecastData={setForecastData}/>
       <HourlyForecast forecastData={forecastData}/>
-
       <Search/>
-
       <WeatherFW/>
       <Gallery/>
       <Footer/>

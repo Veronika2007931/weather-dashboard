@@ -4,9 +4,8 @@ import user from "../../img/user.png"
 
 
 export const HeadSection = styled.div`
+    font-family: Montserrat;
     font-weight: 500;
-    padding: 15px 0;
-    width: 1200px;
     height: 70px;
     display: flex;
     margin: auto;
@@ -34,22 +33,46 @@ export const Logo = styled.a`
         height: 56px;
     }
 `
+export const MobileMenu = styled.div`
+        background-color:#E6E6E6;
+        padding: 30px 50px;
+        display: flex;
+        font-family: Montserrat;
+`
 
 export const HeadMenu = styled.ul`
     padding: 0;
-    margin: auto 111px;
     list-style:none;
-    display: flex;
-    & li:not(:first-child){
-        margin-left: 45px;
-    }
     & li a{
         color: black;
         text-decoration: none;
     }
+    @media screen and (min-width: ${(p)=>p.theme.breakpoints.mobile}){
+        margin:0;
+        & li:not(:first-child){
+            margin-top: 25px;
+        }
+        & li a{
+            font-size:10px;
+        }
+    }
+    @media screen and (min-width: ${(p)=>p.theme.breakpoints.tablet}){
+        margin: auto 57px;
+        display: flex;
+        & li:not(:first-child){
+            margin:0;
+            margin-left: 45px;
+        }
+        & li a{
+            font-size:12px;
+            margin: auto;
+        }
+    }
+    @media screen and (min-width: ${(p)=>p.theme.breakpoints.desktop}){
+        margin: auto 111px;
+    }
 `
 export const SingInMenu = styled.div`
-    display: flex;
     margin-left:auto;
     & span{
         margin: auto 0;
@@ -57,14 +80,21 @@ export const SingInMenu = styled.div`
     }
     & div{
         margin: auto;
-        margin-left: 25px;
-        width: 50px;
-        height: 50px;
         border-radius: 50%;
         background-repeat:no-repeat;
         background-size:cover;
-        background-image: url(${user});
-        
+        background-image: url(${user}); 
+        @media screen and (min-width: ${(p)=>p.theme.breakpoints.mobile}){
+            margin-bottom: 15px;
+            width:40px;
+            height: 40px;
+        } 
+        @media screen and (min-width: ${(p)=>p.theme.breakpoints.tablet}){
+            width: 50px;
+            height: 50px;
+            margin-left: 25px;
+        }
+
     }
     & button{
         margin: auto 0;
@@ -72,7 +102,6 @@ export const SingInMenu = styled.div`
         background-color: #FFB36C;
         border: none;
         border-radius: 10px;
-        padding: 10px 20px;
         transition: all ease-in-out 150ms;
         &:focus{
             outline: none;
@@ -80,5 +109,21 @@ export const SingInMenu = styled.div`
         &:hover{
             transform: scale(1.05);
         }
+        @media screen and (min-width: ${(p)=>p.theme.breakpoints.mobile}){
+            padding: 8px 16px;
+            font-size: 10px;
+        } 
+        @media screen and (min-width: ${(p)=>p.theme.breakpoints.desktop}){
+            padding: 10px 20px;
+            font-size: 12px;
+        }
+    }        
+    @media screen and (min-width: ${(p)=>p.theme.breakpoints.mobile}){
+        width: fit-content;
+    } 
+    @media screen and (min-width: ${(p)=>p.theme.breakpoints.tablet}){
+        display: flex;
+        width: max-content;
     }
+
 `
