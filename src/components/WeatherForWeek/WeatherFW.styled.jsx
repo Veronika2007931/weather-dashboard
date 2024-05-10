@@ -11,11 +11,13 @@ export const Container = styled.div`
     padding: 7px;
 
     @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
-        width: ${(p) => p.theme.breakpoints.mobile}
+        width: ${(p) => p.theme.breakpoints.mobile};
+        height: auto;
     }
 
     @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
-        width: ${(p) =>  p.theme.breakpoints.tablet}
+        width: ${(p) =>  p.theme.breakpoints.tablet};
+        height: auto;
     }
 
     @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
@@ -26,13 +28,39 @@ export const Container = styled.div`
 
 export const List = styled.ul`
     list-style: none;
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
+       
+    }
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
+        
+    }
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
+        
+    }
 `
 
-export const Item = styled.li`
-    margin: 15px;
-    background-color: #D9D9D9;
-    border-radius: 10px;
-    display: flex;
+export const Item = styled.li`      
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
+        background-color: #D9D9D9;
+        border-radius: 10px;
+        text-align: center;
+        flex-basis: calc((100% - 10px) / 2);
+    }
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
+       display: flex;  
+       margin: 15px;
+       background-color: #D9D9D9;
+       border-radius: 10px;
+    }
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
+        
+    }
 `
 
 export const MainText = styled.p`
@@ -41,14 +69,26 @@ export const MainText = styled.p`
 
 export const SecondaryTextDate = styled.p`
     margin-left: 15px;
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
+        margin-left: none;
+    }
 `
 
 export const SecondaryTextWeather = styled.p`
     margin-left: 200px;
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
+        margin-left: none;
+    }
 `
 
 export const SecondaryTextW2 = styled.p`
     margin-left: 100px;
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
+        margin-left: none;
+    }
 `
 
 
