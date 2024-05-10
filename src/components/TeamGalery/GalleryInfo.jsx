@@ -1,10 +1,14 @@
+import { Image, Text } from "./Gallery.styled"
+
+
 
 export function GalleryInfo({name, index, task, photo}){
     return (
         <li>
-            <img src={photo} alt="" />
+            <Image src={photo} alt="" />
             <h2>{name}</h2>
-            <p>{task}</p>
+            <Text>{task}</Text>
+           
         </li>
     )
 }
