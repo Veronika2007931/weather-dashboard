@@ -13,19 +13,23 @@ export function NewsSection() {
     useEffect(() => {
         fetch(`https://newsapi.org/v2/everything?q=weather&apiKey=${apiKey}`)
         .then(response => response.json())
-        .then(data => setNewsData(data))
+        .then(data => data.articles)
+        .then(articles => {
+                const updatedNewsData = articles.splice(0, 4);
+                setNewsData(updatedNewsData)
+            })
         .catch(error => console.error('Error fetching news:', error));
     }, []);
 
-    const updatedNewsData = newsData.splice(0, 4);
-
+    
+   
     return (
     <section className="news-section">
         <h2 className="news-title">Interacting with our pets</h2>
 
-        {updatedNewsData.map((newsItem, index) => {
-            <div key={index} className="news-item">
-                <img src={newsItem.image} alt={``} />
+        {newsData && newsData.map((newsItem, index) => {
+          return  <div key={index} className="news-item">
+                <img src={newsItem.urlToImage} alt={``} />
                 <p>{newsItem.title}</p>
             </div>
         })}
