@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Container, Item, List, MainText, SecondaryTextDate, SecondaryTextWeather, SecondaryTextW2 } from "./WeatherFW.styled";
 
-export function WeatherFW () {
+export function WeatherFW ({}) {
 
 const [weather, setWeather] = useState([])
 
@@ -19,7 +19,6 @@ function getWeaklyWeather(lat, lon){
 function getDate(millisecs){
     return new Date(millisecs * 1000)
 }
-
 
 function getCelsius(grade){
     return Math.floor(grade - 273,16)
