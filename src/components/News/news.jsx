@@ -17,7 +17,7 @@ export function NewsSection() {
         .catch(error => console.error('Error fetching news:', error));
     }, []);
 
-    const updatedNewsData = newsData.splice(0, 6);
+    const updatedNewsData = newsData.splice(0, 4);
 
     return (
     <section className="news-section">
