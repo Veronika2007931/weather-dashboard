@@ -1,64 +1,30 @@
-
-// CityList.jsx
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import { CityListContainer } from './CityList.styled';
 import CityCard from './CityCard';
-import styles from './CityList.module.css';
 
-export class CityList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cities: JSON.parse(localStorage.getItem('cities')) || [],
-      newCityName: ''
-    };
-  }
+const CityList = () => {
+  const [cities, setCities] = useState([]);
 
-  componentDidUpdate() {
-    localStorage.setItem('cities', JSON.stringify(this.state.cities));
-  }
+  useEffect(() => {
+    const citiesFromStorage = JSON.parse(localStorage.getItem('cities')) || [];
+    setCities(citiesFromStorage);
+  }, []);
 
-  handleChange = (event) => {
-    this.setState({ newCityName: event.target.value });
+  const handleDelete = (cityName) => {
+    setCities(prevCities => prevCities.filter(city => city !== cityName));
   };
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    const { newCityName, cities } = this.state;
-    if (newCityName.trim() !== '') {
-      this.setState({ cities: [...cities, newCityName], newCityName: '' });
-    }
-  };
-
-  handleDelete = (cityName) => {
-    this.setState(prevState => ({
-      cities: prevState.cities.filter(city => city !== cityName)
-    }));
-  };
-
-  render() {
-    const { cities, newCityName } = this.state;
-    return (
-      <div className={styles.cityList}>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            placeholder="Enter city name"
-            value={newCityName}
-            onChange={this.handleChange}
-          />
-          <button type="submit" disabled={!newCityName.trim()}>Add City</button>
-        </form>
-        {cities.map(city => (
-          <CityCard
-            key={city}
-            city={city}
-            onDelete={this.handleDelete}
-            setForecastData={this.props.setForecastData}
-          />
-        ))}
-      </div>
-    );
-  }
+  return (
+    <CityListContainer>
+      {cities.map(city => (
+        <CityCard
+          key={city}
+          city={city}
+          onDelete={handleDelete}
+        />
+      ))}
+    </CityListContainer>
+  );
 }
 
 export default CityList;
