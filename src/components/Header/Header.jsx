@@ -32,19 +32,15 @@ export const Header=()=>{
                         <div></div>
                     </SingInMenu>
                 </>  )}
-            const MenuBtn=()=>{
-                return(
-                    <button type="button" onClick={()=>{switchMini(!showMini)}}>menu</button>
-                )}
 
     return(
         <>
             <HeadSection>
                 <Logo href="/#" type="button"></Logo>
-                {window.innerWidth>768?<Menu/>:<MenuBtn/>}
-                {showModal&&<Modal closeModal={switchModal} regis={newAcc} check={check}/>}
+                {window.innerWidth>768?<Menu/>:<button type="button"  onClick={()=>{switchMini(!showMini)}}>menu</button>}
             </HeadSection>
-                {window.innerWidth<768&&showMini&&<MiniMenu account={account} switchModal={switchModal}/>}
+            {showModal&&<Modal closeModal={switchModal} regis={newAcc} check={check}/>}
+            {showMini&&<MiniMenu account={account} switchModal={switchModal}/>}
         </>
     )
 }
