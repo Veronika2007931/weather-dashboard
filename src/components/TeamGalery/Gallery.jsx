@@ -1,21 +1,28 @@
 import {team} from "../../team"
 import { GalleryInfo } from "./GalleryInfo"
+import { MdArrowForwardIos } from "react-icons/md";
+import { MdArrowBackIosNew } from "react-icons/md";
+import {Ullist} from "./Gallery.styled"
 
 export function Gallery(){
     return(
         <div>
             <h2>Наша команда</h2>
-            <ul>
+            <MdArrowBackIosNew />
+            <Ullist>
             {team.map(({name, index, task, photo})=>{
-                return <GalleryInfo>
-                    key={name}
-                    name={name}
-                    index={index}
-                    task={task}
-                    photo={photo}
-                </GalleryInfo>
+                return <GalleryInfo 
+                key={name}
+                name={name}
+                index={index}
+                task={task}
+                photo={photo}
+                />
+                  
+               
             })}
-            </ul>
+            </Ullist>
+            <MdArrowForwardIos />
         </div>
     )
 }
