@@ -9,7 +9,7 @@ export const Hero=styled.section`
     background-size:cover;
     background-position:center;  
     gap:0px;
-    color: rgba(255,255,255,1);
+    color: rgb(189 176 176);
     font-family:Montserrat;
 `
 export const InputHero=styled.input`
@@ -60,7 +60,7 @@ export const DivHero=styled.div`
 export const TextHero=styled.p`
     &:first-child{
         width:172px;
-        color:rgba(255,255,255,1);
+        color: rgb(189 176 176);
         padding-right:30px;
         margin:0;
         @media(max-width:393px){
@@ -73,12 +73,11 @@ export const TextHero=styled.p`
     }
     &:last-child{
         padding-left:30px;
-        color:rgba(255,255,255,1);
+        color: rgb(189 176 176);
         margin:0;
         width:96px;
         @media(max-width:393px){
             position:absolute;
-            bottom:7px;
             width:210px;
             height:24px;
         }
@@ -92,15 +91,3 @@ export const Line=styled.div`
         position:relative;
     }
 `
-// export const TextHero1=styled.p`
-//     padding-left:30px;
-//     color:rgba(255,255,255,1);
-//     margin:0;
-//     width:96px;
-//     @media(max-width:393px){
-//         position:absolute;
-//         bottom:7px;
-//         width:192px;
-//         height:24px;
-//     }
-// `
