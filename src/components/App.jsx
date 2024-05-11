@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Header } from "./Header/Header"
 import { CityList } from "./CityCard/CityList.styled";
 import { WeatherFW } from "components/WeatherForWeek/WeatherFW";
-import { NewsSection } from "./News/News";
+// import { NewsSection } from "./News/News";
 import { Gallery } from "./TeamGalery/Gallery";
 import { Footer } from "./Footer/Footer"
 import {Container} from "../Container.styled"
@@ -25,14 +25,9 @@ export const App = () => {
       <Gallery/>
       <CityList setForecastData={setForecastData}/>
       {/* <HourlyForecast forecastData={forecastData}/> */}
-
-   
-      
-      <NewsSection/>
-   
+      {/* <NewsSection/> */}
       <CityList setForecastData={setForecastData}/>
-      <HourlyForecast forecastData={forecastData}/>
-
+      {/* <HourlyForecast forecastData={forecastData}/> */}
       <Footer/>
     </Container>
   );
