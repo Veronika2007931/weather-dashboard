@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const Container = styled.div`
     background-color: #E8E8E8;
-    height: 580px;
+    height: 600px;
     top: 2513px;
     gap: 0px;
     border-radius: 20px;
@@ -30,11 +30,13 @@ export const List = styled.ul`
     list-style: none;
 
     @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
-       
+       display: flex;
+       flex-wrap: wrap;
     }
 
     @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
-        
+        display: block;
+        flex-wrap: none;
     }
 
     @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
@@ -48,7 +50,9 @@ export const Item = styled.li`
         background-color: #D9D9D9;
         border-radius: 10px;
         text-align: center;
-        flex-basis: calc((100% - 10px) / 2);
+        flex-basis: calc((100% - 15px * 4) / 2);
+        margin: 15px;
+        padding: 10px, 8px, 22px, 8px;
     }
 
     @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
@@ -56,38 +60,75 @@ export const Item = styled.li`
        margin: 15px;
        background-color: #D9D9D9;
        border-radius: 10px;
+       text-align: start;
     }
 
     @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
-        
+       
     }
 `
 
 export const MainText = styled.p`
-    margin-left: 58px;
+    @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
+       margin-left: 20px;
+    }
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
+        
+    }
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
+        margin-left: 20px;
+    }
 `
 
 export const SecondaryTextDate = styled.p`
-    margin-left: 15px;
 
     @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
         margin-left: none;
+        padding-top: 5px;
+    }
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
+        padding: 5px;
+    }
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
+        margin-left: 15px;
     }
 `
 
 export const SecondaryTextWeather = styled.p`
-    margin-left: 200px;
 
     @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
         margin-left: none;
+        padding-bottom: 5px;
+        padding-top: 10px;
+    }
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
+        padding: none;
+        margin-left: 170px;
+    }
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
+        margin-left: 200px;
     }
 `
 
 export const SecondaryTextW2 = styled.p`
-    margin-left: 100px;
 
     @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
         margin-left: none;
+    }
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
+        margin-left: 100px;
+        padding: 5px;
+    }
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
+        margin-left: 200px;
     }
 `
 
