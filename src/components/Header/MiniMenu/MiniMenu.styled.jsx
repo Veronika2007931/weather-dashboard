@@ -5,12 +5,13 @@ import user from "../../../img/user.png"
 
 export const MobileMenu = styled.div`
     left: 0;
-    width: 100%;
+    width: 87%;
     position: absolute;
     background-color:#E6E6E6;
     padding: 30px 50px;
     display: flex;
     font-family: Montserrat;
+    box-shadow: inset 0px 20px 20px rgba(0,0,0,0.1);
 `
 
 export const HeadMenu = styled.ul`

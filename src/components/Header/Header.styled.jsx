@@ -115,6 +115,19 @@ export const MiniMenuBtn = styled.button`
     margin: auto 0 auto auto;
     border: none;
     background: none;
+    & div{
+        margin-left: 4px;
+        margin-top: 2px;
+        border-bottom: 1PX solid black;
+        border-right: 1PX solid black;
+        width: 9px;
+        height: 9px;
+        rotate: -45deg;
+        transition: 150ms all ease-in-out;
+        &.off{
+            rotate: 45deg;
+        }
+    }
     @media screen and (min-width: ${(p)=>p.theme.breakpoints.tablet}){
         display: none;
     }

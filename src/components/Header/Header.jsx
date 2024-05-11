@@ -38,7 +38,7 @@ export const Header=()=>{
                     {account?<span>{account.name}</span>:<button type="button">Sing up</button>}
                     <div></div>
                 </SingInMenu>
-                <MiniMenuBtn type="button"  onClick={()=>{switchMini(!showMini)}}>menu</MiniMenuBtn>  
+                <MiniMenuBtn type="button"  onClick={()=>{switchMini(!showMini)}}>menu{showMini?<div className="off"></div>:<div className="on"></div>}</MiniMenuBtn>  
             </HeadSection>
             {showModal&&<Modal closeModal={switchModal} regis={newAcc} check={check}/>}
             {showMini&&<MiniMenu account={account} switchModal={switchModal}/>}
