@@ -14,7 +14,7 @@ const CityListContainer = styled.div`
   }
 `;
 
-const CityList = () => {
+export const CityList = () => {
   const [cities, setCities] = useState([]);
   const [newCityName, setNewCityName] = useState('');
 
