@@ -27,7 +27,12 @@ export const Modal = ({ closeModal, regis, check}) => {
             closeModal()
         }
         else{
-            alert('You have to fill all fields')
+            const logOut=()=>{
+                regis(null)
+                localStorage.removeItem("accInfo")
+                closeModal()
+            }
+            check()?confirm("Log out")&&logOut():alert('You have to fill all fields')
         }
     }
     return(

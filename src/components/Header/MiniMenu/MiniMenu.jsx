@@ -1,4 +1,5 @@
-import { HeadMenu, MobileMenu, SingInMenu } from "../Header.styled"
+import { HeadMenu, SingInMenu, MobileMenu } from "./MiniMenu.styled"
+import user from "../../../img/user.png"
 
 export const MiniMenu=({account, switchModal})=>{
     return(

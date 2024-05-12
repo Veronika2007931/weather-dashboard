@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { Header } from "./Header/Header"
+// import { CityList } from "./CityCard/CityList.styled";
 import CityList from "./CityCard/CityList.styled"
 import { WeatherFW } from "components/WeatherForWeek/WeatherFW";
 // import { NewsSection } from "./News/News";
@@ -18,8 +19,10 @@ export const App = () => {
 
   return (
     <Container>
-      <Header/>
-
+      <WeatherFW/>
+      <Gallery/>
+      {/* <CityList setForecastData={setForecastData}/> */}
+      {/* <HourlyForecast forecastData={forecastData}/> */}
       <Search/>
       <WeatherFW/>
       <Gallery/>
