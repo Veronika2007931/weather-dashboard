@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Header } from "./Header/Header"
 // import { CityList } from "./CityCard/CityList.styled";
-import CityList from "./CityCard/CityList.styled"
+// import CityList from "./CityCard/CityList.styled"
 import { WeatherFW } from "components/WeatherForWeek/WeatherFW";
 // import { NewsSection } from "./News/News";
 import { Gallery } from "./TeamGalery/Gallery";
@@ -18,22 +18,20 @@ export const App = () => {
   const [forecastData, setForecastData] = useState(null)
 
   return (
+    <>
     <Container>
-      <WeatherFW/>
-      <Gallery/>
+    <Header/>
+    <Search/>
       {/* <CityList setForecastData={setForecastData}/> */}
       {/* <HourlyForecast forecastData={forecastData}/> */}
-      <Search/>
-      <WeatherFW/>
-      <Gallery/>
-      <CityList setForecastData={setForecastData}/>
-      {/* <HourlyForecast forecastData={forecastData}/> */}
+    <WeatherFW/>
+    <Gallery/>
       {/* <NewsSection/> */}
-      <CityList setForecastData={setForecastData}/>
-      {/* <HourlyForecast forecastData={forecastData}/> */}
-      <Footer/>
-      <GlobalStyle/>
+    <GlobalStyle/>
+    <Footer/>
     </Container>
+    
+    </>
   );
 };
 

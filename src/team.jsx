@@ -36,7 +36,7 @@ export const team=[
     },
    {index:8,
     name: "Вероніка",
-    task:"Поки що немає",
+    task:'Team lead команди. Створення секції "Наша команда" де показані учасники та завдання які вони виконували',
     photo: "https://images.unsplash.com/photo-1711725104835-91f1ecc9bd96?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MXx8fGVufDB8fHx8fA%3D%3D"
     },
 
