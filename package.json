@@ -5,6 +5,7 @@
   "homepage": "https://Veronika2007931.github.io/weather-dashboard/",
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
+    "@splidejs/react-splide": "^0.7.12",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
@@ -28,7 +29,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  
   "browserslist": {
     "production": [
       ">0.2%",
