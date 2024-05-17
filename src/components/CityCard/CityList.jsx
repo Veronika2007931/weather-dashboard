@@ -14,6 +14,10 @@ const CityList = () => {
     setCities(prevCities => prevCities.filter(city => city !== cityName));
   };
 
+  useEffect(() => {
+    localStorage.setItem('cities', JSON.stringify(cities));
+  }, [cities]);
+
   return (
     <CityListContainer>
       {cities.map(city => (
