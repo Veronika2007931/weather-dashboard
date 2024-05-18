@@ -1,54 +1,80 @@
 import styled from 'styled-components';
 
-export const CardContainer = styled.div`
-  width: 100%;
-  max-width: 300px;
-  padding: 20px;
+export const CityCardContainer = styled.div`
+  width: 320px;
+  height: 430px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  overflow: hidden;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const CityInfo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px;
 `;
 
 export const CityName = styled.h2`
+  font-size: 24px;
   margin: 0;
-  font-size: 18px;
-  font-weight: 600;
+`;
+
+export const Time = styled.p`
+  margin: 0;
+  color: #555;
+`;
+
+export const ForecastLinks = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 16px;
+`;
+
+export const ForecastButton = styled.button`
+  background: none;
+  border: none;
+  color: #1e90ff;
+  cursor: pointer;
+`;
+
+export const DateText = styled.p`
+  margin: 0;
+  color: #777;
+`;
+
+export const WeatherIcon = styled.img`
+  width: 120px;
+  height: 120px;
 `;
 
 export const Temperature = styled.p`
-  margin: 10px 0;
-  font-size: 24px;
-  font-weight: 500;
+  font-size: 48px;
+  margin: 0;
 `;
 
-export const ButtonContainer = styled.div`
+export const Buttons = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  width: 100%;
+  padding: 16px;
 `;
 
 export const Button = styled.button`
-  padding: 8px 16px;
+  background: none;
   border: none;
-  border-radius: 4px;
+  color: #555;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 
-  &:hover {
-    background-color: #f0f0f0;
+  &.favorite {
+    color: red;
   }
-`;
-
-export const DeleteButton = styled(Button)`
-  background-color: #f44336;
-  color: #fff;
-`;
-
-export const FavoriteButton = styled(Button)`
-  background-color: #2196f3;
-  color: #fff;
-`;
-
-export const RefreshButton = styled(Button)`
-  background-color: #4caf50;
-  color: #fff;
 `;
