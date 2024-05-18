@@ -9,7 +9,7 @@ export const Hero=styled.section`
     background-size:cover;
     background-position:center;  
     gap:0px;
-    color: rgb(189 176 176);
+    color: black;
     font-family:Montserrat;
 `
 export const InputHero=styled.input`
@@ -60,7 +60,7 @@ export const DivHero=styled.div`
 export const TextHero=styled.p`
     &:first-child{
         width:172px;
-        color: rgb(189 176 176);
+        color: black;
         padding-right:30px;
         margin:0;
         @media(max-width:393px){
@@ -73,7 +73,7 @@ export const TextHero=styled.p`
     }
     &:last-child{
         padding-left:30px;
-        color: rgb(189 176 176);
+        color: black;
         margin:0;
         width:96px;
         @media(max-width:393px){
@@ -86,7 +86,7 @@ export const TextHero=styled.p`
 export const Line=styled.div`
     width:1px;
     height:110px;
-    background-color:rgba(255,255,255,1);
+    background-color:black;
     @media(max-width:393px){
         position:relative;
     }
