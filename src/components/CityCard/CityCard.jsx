@@ -15,6 +15,7 @@ import {
 } from './CityCard.styled';
 
 const CityCard = ({ city, onDelete, onRefresh }) => {
+  // console.log(city.sys.country);
   const handleDelete = () => {
     onDelete(city.name);
   };
@@ -26,7 +27,9 @@ const CityCard = ({ city, onDelete, onRefresh }) => {
   return (
     <CityCardContainer>
       <CityInfo>
-        <CityName>{city.name}, {city.sys.country}</CityName>
+        <CityName>{city.name},
+          {/* {city.sys.country} */}
+        </CityName>
       </CityInfo>
       <Time>{new Date().toLocaleTimeString()}</Time>
       <ForecastLinks>

@@ -10,13 +10,22 @@ import { Search } from "./Search/Search";
 import { GlobalStyle } from "Global.styled";
 
 export const App = () => {
+   const [array,changeArray]=useState(localStorage.getItem('array')===null?([]):(JSON.parse(localStorage.getItem('array'))))
   const [forecastData, setForecastData] = useState(null);
 
+  const addNewCity = (city) => {
+     changeArray(prev => {
+                    const newA = [...prev, city]; localStorage.setItem('array', JSON.stringify(newA));
+
+                    return newA
+                })
+  }
+  
   return (
     <Container>
       <Header />
-      <Search />
-      <CityList setForecastData={setForecastData} />
+      <Search onSearch={addNewCity} />
+      {array && <CityList setForecastData={setForecastData} cities={array } />}
       <HourlyForecast forecastData={forecastData} />
       <WeatherFW />
       <Gallery />
