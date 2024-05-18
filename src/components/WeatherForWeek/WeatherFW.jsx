@@ -36,7 +36,7 @@ function getCelsius(grade){
            {weather.length > 0 && weather.map((date) => (
             <Item key={date.dt}>
                 <SecondaryTextDate>{new Date(getDate(date.dt)).toDateString()}</SecondaryTextDate>
-                <SecondaryTextWeather>{getCelsius(date.temp.min)}/{getCelsius(date.temp.max)}℃</SecondaryTextWeather>
+                <SecondaryTextWeather>{getCelsius(date.temp.min)}/{getCelsius(date.temp.max)}°C</SecondaryTextWeather>
                 <SecondaryTextW2>{date.summary}</SecondaryTextW2> 
             </Item>
           ))}
