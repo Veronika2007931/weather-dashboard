@@ -1,8 +1,12 @@
 import { useRef,useCallback,useState } from "react";
-import { Hero,InputHero,ButtHero,DivHero,H1Hero,TextHero, Line,TextHero1, FormHero } from "./Search.styled";
+import { Hero,InputHero,ButtHero,DivHero,H1Hero,TextHero, Line, FormHero } from "./Search.styled";
 import imageSearch from '../../img/image 2 (1).png'
 export const Search=()=>{
     const r=useRef(null)
+    const now=new Date()
+    const months=["January","February","March","April","May","June","July","August","September","October","November","December"]    
+    const days=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'] 
+    const [data,changeData]=useState(`${months[now.getMonth()]} ${now.getFullYear()} | ${days[now.getDay()]}, ${now.getDate()}`)
     const [array,changeArray]=useState(localStorage.getItem('array')===null?([]):(JSON.parse(localStorage.getItem('array'))))
     const submit=async(e)=>{
         e.preventDefault();
@@ -22,7 +26,7 @@ export const Search=()=>{
                 <DivHero>
                     <TextHero>Create your personal list of favorite cities and always be aware of the weather.</TextHero>
                     <Line/>
-                    <TextHero>October 2023 | Friday, 13th</TextHero>
+                    <TextHero>{data}</TextHero>
                 </DivHero>
                 <FormHero onSubmit={submit}>
                     <InputHero ref={r} placeholder='Search location...' type="text" name="search"/>
