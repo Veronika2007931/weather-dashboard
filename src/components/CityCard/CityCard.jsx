@@ -1,23 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { FiTrash, FiHeart, FiRefreshCw } from 'react-icons/fi';
 import {
   CityCardContainer,
+  CityInfo,
   CityName,
   Time,
   ForecastLinks,
   ForecastButton,
-  Date,
+  DateText,
   WeatherIcon,
   Temperature,
   Buttons,
   Button
 } from './CityCard.styled';
-import { RefreshButton, FavoriteButton, SeeMoreButton } from './CityCard.styled';
-import { WeatherFW } from 'components/WeatherForWeek/WeatherFW';
 
 const CityCard = ({ city, onDelete }) => {
   const [weather, setWeather] = useState(null);
   const [favorites, setFavorites] = useState([]); 
-  const [weekly, setWeeklyShow] = useState(false);
 
   useEffect(() => {
     const apiKey = 'a86fb84773d86d1940b7e1fc1d165391'; 
@@ -44,18 +43,8 @@ const CityCard = ({ city, onDelete }) => {
       setWeeklyShow({ weekly: true })
   }
 
-  const handleRefreshClick = () => {
-    fetchWeather();
-  };
-
-  const handleFavoriteClick = () => {
-    if (!favorites.includes(city)) {
-      setFavorites(prevFavorites => [...prevFavorites, city]); 
-    }
-  };
-
-  const handleSeeMoreClick = () => {
-    
+  const handleRefresh = () => {
+    onRefresh(city.name);
   };
 
   return (
@@ -67,7 +56,7 @@ const CityCard = ({ city, onDelete }) => {
           <Time>{new Date().toLocaleTimeString()}</Time>
           <ForecastLinks>
             <ForecastButton>Hourly forecast</ForecastButton>
-            <ForecastButton onClick={handleWeeklyWeather} coord={weather}>Weekly forecast</ForecastButton>
+            <ForecastButton>Weekly forecast</ForecastButton>
           </ForecastLinks>
           <Date>{new Date().toLocaleDateString()}</Date>
           <WeatherIcon src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`} alt="Weather Icon" />
@@ -84,6 +73,6 @@ const CityCard = ({ city, onDelete }) => {
     {weather && <WeatherFW coord={weather}/>}
     </>
   );
-};
+}
 
 export default CityCard;
