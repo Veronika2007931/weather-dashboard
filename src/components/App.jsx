@@ -11,25 +11,30 @@ import {Container} from "../Container.styled"
 // import { HourlyForecast } from "./HourlyForecast/HourlyForecast";
 import { Search } from './Search/Search'
 import { GlobalStyle } from "Global.styled";
-// import { Slaider } from "./Slaider/Slaider";
+import { Carousel } from "./Slaider/Carousel"
 
 
 
 export const App = () => {
   const [forecastData, setForecastData] = useState(null)
+  const slides = [
+    'https://via.placeholder.com/800x400?text=Slide+1',
+    'https://via.placeholder.com/800x400?text=Slide+2',
+    'https://via.placeholder.com/800x400?text=Slide+3',
+  ];
 
   return (
     <>
     <Container>
     <Header/>
     <Search/>
-      {/* <CityList setForecastData={setForecastData}/> */}
-      {/* <HourlyForecast forecastData={forecastData}/> */}
+      <CityList setForecastData={setForecastData}/>
+      <HourlyForecast forecastData={forecastData}/>
     <WeatherFW/>
-    {/* <Gallery/> */}
-      {/* <NewsSection/> */}
+    <Gallery/>
+      <NewsSection/>
     <GlobalStyle/>
-    {/* <Slaider/> */}
+    <Carousel slides={slides}/>
     <Footer/>
     </Container>
     
