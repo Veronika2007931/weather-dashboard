@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 import { Container, Item, List, MainText, SecondaryTextDate, SecondaryTextWeather, SecondaryTextW2 } from "./WeatherFW.styled";
 
-export function WeatherFW ({coord}) {
+export function WeatherFW ({city}) {
 
 const [weather, setWeather] = useState([])
 
 useEffect(() => {
-    if(coord){
-      const lon = coord.coord.lon
-      const lat = coord.coord.lat
+    if(city){
+      const lon = city.coord.lon
+      const lat = city.coord.lat
 
       getWeaklyWeather(lat, lon)
       .then(weather => weather.daily)
       .then(daily => setWeather(daily))
     }
-}, [coord])
+}, [city])
 
 function getWeaklyWeather(lat, lon){
    return fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=40207e285e43c5b8e49ba7f2599cdd4b`)
