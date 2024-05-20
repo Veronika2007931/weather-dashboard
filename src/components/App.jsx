@@ -18,7 +18,6 @@ export const App = () => {
       <Search />
       <CityList setForecastData={setForecastData} />
       <HourlyForecast forecastData={forecastData} />
-      <WeatherFW />
       <Gallery />
       <Footer />
       <GlobalStyle />
