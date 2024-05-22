@@ -8,21 +8,27 @@ import { Container } from "../Container.styled";
 import { HourlyForecast } from "./HourlyForecast/HourlyForecast";
 import { Search } from "./Search/Search";
 import { GlobalStyle } from "Global.styled";
+import {NewsSection} from "./News/news"
 
 export const App = () => {
   const [forecastData, setForecastData] = useState(null);
 
   return (
+    <>
+    <Header />
+    <Search />
     <Container>
-      <Header />
-      <Search />
       <CityList setForecastData={setForecastData} />
       <HourlyForecast forecastData={forecastData} />
+      <WeatherFW/>
       <Gallery />
-      <Footer />
-      <GlobalStyle />
+      <NewsSection/>
     </Container>
+    <Footer />
+    <GlobalStyle />
+    </>
   );
+    
 };
 
 export default App;
