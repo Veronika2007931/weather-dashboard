@@ -10,34 +10,35 @@ import { Search } from "./Search/Search";
 import { GlobalStyle } from "Global.styled";
 
 export const App = () => {
-   const [array,changeArray]=useState(localStorage.getItem('array')===null?([]):(JSON.parse(localStorage.getItem('array'))))
-  const [forecastData, setForecastData] = useState(null);
+   const [array, changeArray] = useState(localStorage.getItem('array') === null ? [] : JSON.parse(localStorage.getItem('array')));
+   const [forecastData, setForecastData] = useState(null);
 
-  const addNewCity = (city) => {
-     changeArray(prev => {
-                    const newA = [...prev, city]; localStorage.setItem('array', JSON.stringify(newA));
+   const addNewCity = (city) => {
+      changeArray(prev => {
+         const newA = [...prev, city];
+         localStorage.setItem('array', JSON.stringify(newA));
+         return newA;
+      });
+   }
 
-                    return newA
-                })
-  }
-  
-  return (
-    <Container>
-      <Header />
-      <Search onSearch={addNewCity} />
-      {array && <CityList setForecastData={setForecastData} cities={array } />}
-      <HourlyForecast forecastData={forecastData} />
-      <WeatherFW />
-      <Gallery />
-      <Footer />
-      <GlobalStyle />
-    </Container>
-  );
+   const handleDelete = (cityName) => {
+      const updatedCities = array.filter(city => city.name !== cityName);
+      changeArray(updatedCities);
+      localStorage.setItem('array', JSON.stringify(updatedCities));
+   };
+
+   return (
+      <Container>
+         <Header />
+         <Search onSearch={addNewCity} />
+         {array && <CityList setForecastData={setForecastData} cities={array} onDelete={handleDelete} />}
+         <HourlyForecast forecastData={forecastData} />
+         <WeatherFW />
+         <Gallery />
+         <Footer />
+         <GlobalStyle />
+      </Container>
+   );
 };
 
 export default App;
-
-
-
-
-

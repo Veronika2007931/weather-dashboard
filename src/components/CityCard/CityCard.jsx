@@ -14,22 +14,15 @@ import {
   Button
 } from './CityCard.styled';
 
-const CityCard = ({ city, onDelete, onRefresh }) => {
-  // console.log(city.sys.country);
+const CityCard = ({ city, onDelete }) => {
   const handleDelete = () => {
     onDelete(city.name);
-  };
-
-  const handleRefresh = () => {
-    onRefresh(city.name);
   };
 
   return (
     <CityCardContainer>
       <CityInfo>
-        <CityName>{city.name},
-          {/* {city.sys.country} */}
-        </CityName>
+        <CityName>{city.name}, {city.sys.country}</CityName>
       </CityInfo>
       <Time>{new Date().toLocaleTimeString()}</Time>
       <ForecastLinks>
@@ -42,7 +35,7 @@ const CityCard = ({ city, onDelete, onRefresh }) => {
       <Buttons>
         <Button onClick={handleDelete}><FiTrash /></Button>
         <Button className="favorite"><FiHeart /></Button>
-        <Button onClick={handleRefresh}><FiRefreshCw /></Button>
+        <Button><FiRefreshCw /></Button>
       </Buttons>
     </CityCardContainer>
   );
