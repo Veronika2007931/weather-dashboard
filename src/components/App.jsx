@@ -40,5 +40,3 @@ export const App = () => {
       </Container>
    );
 };
-
-export default App;
