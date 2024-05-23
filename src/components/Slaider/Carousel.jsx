@@ -1,4 +1,5 @@
-import {Carousell, CarouselInner, CarouselItem, CarouselImg, CarouselButton1, CarouselButton2} from "./Carousel.styled"
+import React, { useState } from 'react';
+import {CarouselContainer, CarouselInner, CarouselItem, CarouselButton} from './Carousel.styled';
 
 export const Carousel = ({ slides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -16,17 +17,18 @@ export const Carousel = ({ slides }) => {
   };
 
   return (
-    <Carousell>
-      <CarouselInner style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+    <CarouselContainer>
+      <CarouselInner index={currentIndex}>
         {slides.map((slide, index) => (
           <CarouselItem key={index}>
-            <CarouselImg src={slide} alt={`Slide ${index}`} />
+            <img src={slide} alt={`Slide ${index}`} />
           </CarouselItem>
         ))}
       </CarouselInner>
-      <CarouselButton1 onClick={goToPrevious} className="carousel-button prev">Previous</CarouselButton1>
-      <CarouselButton2 onClick={goToNext} className="carousel-button next">Next</CarouselButton2>
-    </Carousell>
+      <CarouselButton onClick={goToPrevious} className="prev">❮</CarouselButton>
+      <CarouselButton onClick={goToNext} className="next">❯</CarouselButton>
+    </CarouselContainer>
   );
 };
 
+export default Carousel;
