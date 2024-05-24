@@ -1,4 +1,5 @@
-import React from 'react';
+import { WeatherFW } from 'components/WeatherForWeek/WeatherFW';
+import { useState } from 'react';
 import { FiTrash, FiHeart, FiRefreshCw } from 'react-icons/fi';
 import {
   CityCardContainer,
@@ -15,11 +16,15 @@ import {
 } from './CityCard.styled';
 
 const CityCard = ({ city, onDelete }) => {
+
+  const [weekly, setWeeklyShow] = useState(false); 
+
   const handleDelete = () => {
     onDelete(city.name);
   };
 
   return (
+    <>   
     <CityCardContainer>
       <CityInfo>
         <CityName>{city.name}, {city.sys.country}</CityName>
@@ -27,7 +32,7 @@ const CityCard = ({ city, onDelete }) => {
       <Time>{new Date().toLocaleTimeString()}</Time>
       <ForecastLinks>
         <ForecastButton>Hourly forecast</ForecastButton>
-        <ForecastButton>Weekly forecast</ForecastButton>
+        <ForecastButton onClick={() => {setWeeklyShow(true)}}>Weekly forecast</ForecastButton>
       </ForecastLinks>
       <DateText>{new Date().toLocaleDateString()}</DateText>
       <WeatherIcon src={`http://openweathermap.org/img/wn/${city.weather[0].icon}.png`} alt="Weather Icon" />
@@ -38,6 +43,8 @@ const CityCard = ({ city, onDelete }) => {
         <Button><FiRefreshCw /></Button>
       </Buttons>
     </CityCardContainer>
+    {weekly && <WeatherFW city={city}/>}
+    </>
   );
 }
 

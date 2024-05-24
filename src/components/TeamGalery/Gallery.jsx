@@ -1,10 +1,7 @@
-// import {team} from "../../team"
-// import { Splide, SplideSlide } from '@splidejs/react-splide';
-// import {Text, Image, Div, Info, Heading, Name} from './Gallery.styled'
-// import '@splidejs/react-splide/css';
-
-
-
+import {team} from "../../team"
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import {Text, Image, Div, Info, Heading, Name} from './Gallery.styled'
+import '@splidejs/react-splide/css';
 
 export function Gallery(){
     const options = {
@@ -27,6 +24,7 @@ export function Gallery(){
          
       }
     return(
+
         <Div style={ { position: 'relative' } }>
           <Heading>Наша команда</Heading>
           <Splide aria-labelledby="My Favorite Images" options={ options } >
