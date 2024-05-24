@@ -31,6 +31,7 @@ const CityList = ({ cities, onDelete, onWeeklyWeather }) => {
           city={city}
           onDelete={onDelete}
           onWeeklyWeather={onWeeklyWeather}
+          onHourlyWeather={showHourlyWeather}
         />
       ))}
     </CityListContainer>

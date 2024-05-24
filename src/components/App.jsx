@@ -34,6 +34,12 @@ export const App = () => {
     setCoord(coord)
   }
 
+  const showHourlyWeather = (coord) => {
+    console.log(coord)
+    setWeeklyShow(true);
+    setCoord(coord)
+  }
+
 
   const addNewCity = (city) => {
     changeArray(prev => {
@@ -55,11 +61,14 @@ export const App = () => {
       <Search onSearch={addNewCity} />
       <Container>
 
-        {array && <CityList setForecastData={setForecastData} cities={array} onDelete={handleDelete} />}
-        <HourlyForecast forecastData={forecastData} />
-        <WeatherFW />
+      
 
-        {array && <CityList setForecastData={setForecastData} cities={array} onDelete={handleDelete} onWeeklyWeather={showWeeklyForecast}/>}
+        {array && <CityList 
+        setForecastData={setForecastData} 
+        cities={array} 
+        onDelete={handleDelete} 
+        onWeeklyWeather={showWeeklyForecast}
+        onHourlyWeather={showHourlyWeather}/>}
         <HourlyForecast forecastData={forecastData} />
         {weekly && <WeatherFW city={coord}/>}
 

@@ -15,7 +15,7 @@ import {
   Button
 } from './CityCard.styled';
 
-const CityCard = ({ city, onDelete, onWeeklyWeather }) => {
+const CityCard = ({ city, onDelete, onWeeklyWeather, onHourlyWeather }) => {
 
   const handleDelete = () => {
     onDelete(city.name);
@@ -29,7 +29,7 @@ const CityCard = ({ city, onDelete, onWeeklyWeather }) => {
       </CityInfo>
       <Time>{new Date().toLocaleTimeString()}</Time>
       <ForecastLinks>
-        <ForecastButton>Hourly forecast</ForecastButton>
+        <ForecastButton onClick={() => onWeeklyWeather(city.coord)}>Hourly forecast</ForecastButton>
         <ForecastButton onClick={() => onWeeklyWeather(city.coord)}>Weekly forecast</ForecastButton>
       </ForecastLinks>
       <DateText>{new Date().toLocaleDateString()}</DateText>
