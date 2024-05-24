@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { CityListContainer } from './CityList.styled';
 import CityCard from './CityCard';
 
-const CityList = ({ cities, onDelete }) => {
+const CityList = ({ cities, onDelete, onWeeklyWeather }) => {
   const [localCities, setLocalCities] = useState([]);
 
   useEffect(() => {
@@ -30,6 +30,7 @@ const CityList = ({ cities, onDelete }) => {
           key={city.name}
           city={city}
           onDelete={onDelete}
+          onWeeklyWeather={onWeeklyWeather}
         />
       ))}
     </CityListContainer>

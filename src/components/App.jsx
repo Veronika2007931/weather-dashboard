@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Header } from "./Header/Header";
 import CityList from "./CityCard/CityList";
-import { WeatherFW } from "components/WeatherForWeek/WeatherFW";
 
-// import { NewsSection } from "./News/News";
-// import { Gallery } from "./TeamGalery/Gallery";
+import { NewsSection } from "./News/news";
+import { Gallery } from "./TeamGalery/Gallery";
 import { Footer } from "./Footer/Footer"
 import {Container} from "../Container.styled"
-// import { HourlyForecast } from "./HourlyForecast/HourlyForecast";
+import { HourlyForecast } from "./HourlyForecast/HourlyForecast";
 import { Search } from './Search/Search'
 import { GlobalStyle } from "Global.styled";
 import { Carousel } from "./Slaider/Carousel"
+import { WeatherFW } from "./WeatherForWeek/WeatherFW";
 
 
 
@@ -23,74 +23,60 @@ export const App = () => {
     'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1FivIp3Xbm4_NUtFz8AtHwo2FjDQeXMti8GkzpUzBPObDnYaTR1OiMReGMWmD3ibzM4jJqmwSXMdQL80wMcYxXltYWjJx1_2maUv7YEhgrxupUYDoJ3VCEyauSUqrERitmNzumGRMvNg/s1600/priroda03.jpg',
   ];
 
-import { Gallery } from "./TeamGalery/Gallery";
-import { Footer } from "./Footer/Footer";
-import { Container } from "../Container.styled";
-import { HourlyForecast } from "./HourlyForecast/HourlyForecast";
-import { Search } from "./Search/Search";
-import { GlobalStyle } from "Global.styled";
+  const [array, changeArray] = useState(localStorage.getItem('array') === null ? [] : JSON.parse(localStorage.getItem('array')));
+  const [weekly, setWeeklyShow] = useState(false); 
+  const [coord, setCoord] = useState(null);
 
-export const App = () => {
+  const showWeeklyForecast = (coord) => {
+    console.log(coord)
+    setWeeklyShow(true);
+    setCoord(coord)
+  }
 
-   const [array, changeArray] = useState(localStorage.getItem('array') === null ? [] : JSON.parse(localStorage.getItem('array')));
-   const [forecastData, setForecastData] = useState(null);
+  const addNewCity = (city) => {
+    changeArray(prev => {
+      const newA = [...prev, city];
+      localStorage.setItem('array', JSON.stringify(newA));
+      return newA;
+    });
+  }
 
-   const addNewCity = (city) => {
-      changeArray(prev => {
-         const newA = [...prev, city];
-         localStorage.setItem('array', JSON.stringify(newA));
-         return newA;
-      });
-   }
-
-   const handleDelete = (cityName) => {
-      const updatedCities = array.filter(city => city.name !== cityName);
-      changeArray(updatedCities);
-      localStorage.setItem('array', JSON.stringify(updatedCities));
-   };
-
-   return (
-      <Container>
-         <Header />
-         <Search onSearch={addNewCity} />
-         {array && <CityList setForecastData={setForecastData} cities={array} onDelete={handleDelete} />}
-         <HourlyForecast forecastData={forecastData} />
-         <WeatherFW />
-         <Gallery />
-         <Footer />
-         <GlobalStyle />
-      </Container>
-   );
-
-  const [forecastData, setForecastData] = useState(null);
-
+  const handleDelete = (cityName) => {
+    const updatedCities = array.filter(city => city.name !== cityName);
+    changeArray(updatedCities);
+    localStorage.setItem('array', JSON.stringify(updatedCities));
+  };
 
   return (
     <>
-    <Header />
-    <Search />
-    <Container>
-
-    <Header/>
-    <Search/>
-      <CityList setForecastData={setForecastData}/>
-      <HourlyForecast forecastData={forecastData}/>
-    <WeatherFW/>
-    <Gallery/>
-      <NewsSection/>
-    <GlobalStyle/>
-    <Carousel slides={slides}/>
-    <Footer/>
-
-      <CityList setForecastData={setForecastData} />
-      <HourlyForecast forecastData={forecastData} />
-      <WeatherFW/>
-      <Gallery />
-
-    </Container>
-    <Footer />
-    <GlobalStyle />
+      <Header />
+      <Search onSearch={addNewCity} />
+      <Container>
+        {array && <CityList setForecastData={setForecastData} cities={array} onDelete={handleDelete} onWeeklyWeather={showWeeklyForecast}/>}
+        <HourlyForecast forecastData={forecastData} />
+        {weekly && <WeatherFW city={coord}/>}
+        <Gallery />
+         <NewsSection/>
+         <Carousel slides={slides}/>
+      </Container>
+      <Footer />
+      <GlobalStyle />
     </>
   );
+}
 
-};
+  // return (
+  //   <>
+
+  //   <Header/>
+  //   <Search/>
+  //     <CityList setForecastData={setForecastData}/>
+  //     <HourlyForecast forecastData={forecastData}/>
+  //   <WeatherFW/>
+  //   <Gallery/>
+  //     <NewsSection/>
+  //   <GlobalStyle/>
+  //   <Carousel slides={slides}/>
+  //   <Footer/>
+  //   </>
+  // );
