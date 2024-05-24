@@ -1,9 +1,8 @@
-
-import { useState } from "react";
-import { Header } from "./Header/Header"
-// import { CityList } from "./CityCard/CityList.styled";
-// import CityList from "./CityCard/CityList.styled"
+import React, { useState } from "react";
+import { Header } from "./Header/Header";
+import CityList from "./CityCard/CityList";
 import { WeatherFW } from "components/WeatherForWeek/WeatherFW";
+
 // import { NewsSection } from "./News/News";
 // import { Gallery } from "./TeamGalery/Gallery";
 import { Footer } from "./Footer/Footer"
@@ -24,9 +23,24 @@ export const App = () => {
     'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1FivIp3Xbm4_NUtFz8AtHwo2FjDQeXMti8GkzpUzBPObDnYaTR1OiMReGMWmD3ibzM4jJqmwSXMdQL80wMcYxXltYWjJx1_2maUv7YEhgrxupUYDoJ3VCEyauSUqrERitmNzumGRMvNg/s1600/priroda03.jpg',
   ];
 
+import { Gallery } from "./TeamGalery/Gallery";
+import { Footer } from "./Footer/Footer";
+import { Container } from "../Container.styled";
+import { HourlyForecast } from "./HourlyForecast/HourlyForecast";
+import { Search } from "./Search/Search";
+import { GlobalStyle } from "Global.styled";
+import {NewsSection} from "./News/news"
+
+export const App = () => {
+  const [forecastData, setForecastData] = useState(null);
+
+
   return (
     <>
+    <Header />
+    <Search />
     <Container>
+
     <Header/>
     <Search/>
       <CityList setForecastData={setForecastData}/>
@@ -37,9 +51,23 @@ export const App = () => {
     <GlobalStyle/>
     <Carousel slides={slides}/>
     <Footer/>
+
+      <CityList setForecastData={setForecastData} />
+      <HourlyForecast forecastData={forecastData} />
+      <WeatherFW/>
+      <Gallery />
+
     </Container>
-    
+    <Footer />
+    <GlobalStyle />
     </>
   );
+    
 };
+
+export default App;
+
+
+
+
 
