@@ -15,9 +15,7 @@ import {
   Button
 } from './CityCard.styled';
 
-const CityCard = ({ city, onDelete }) => {
-
-  const [weekly, setWeeklyShow] = useState(false); 
+const CityCard = ({ city, onDelete, onWeeklyWeather }) => {
 
   const handleDelete = () => {
     onDelete(city.name);
@@ -32,7 +30,7 @@ const CityCard = ({ city, onDelete }) => {
       <Time>{new Date().toLocaleTimeString()}</Time>
       <ForecastLinks>
         <ForecastButton>Hourly forecast</ForecastButton>
-        <ForecastButton onClick={() => {setWeeklyShow(true)}}>Weekly forecast</ForecastButton>
+        <ForecastButton onClick={() => onWeeklyWeather(city.coord)}>Weekly forecast</ForecastButton>
       </ForecastLinks>
       <DateText>{new Date().toLocaleDateString()}</DateText>
       <WeatherIcon src={`http://openweathermap.org/img/wn/${city.weather[0].icon}.png`} alt="Weather Icon" />
@@ -43,7 +41,6 @@ const CityCard = ({ city, onDelete }) => {
         <Button><FiRefreshCw /></Button>
       </Buttons>
     </CityCardContainer>
-    {weekly && <WeatherFW city={city}/>}
     </>
   );
 }
