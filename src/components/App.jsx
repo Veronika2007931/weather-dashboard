@@ -29,9 +29,39 @@ import { Container } from "../Container.styled";
 import { HourlyForecast } from "./HourlyForecast/HourlyForecast";
 import { Search } from "./Search/Search";
 import { GlobalStyle } from "Global.styled";
-import {NewsSection} from "./News/news"
 
 export const App = () => {
+
+   const [array, changeArray] = useState(localStorage.getItem('array') === null ? [] : JSON.parse(localStorage.getItem('array')));
+   const [forecastData, setForecastData] = useState(null);
+
+   const addNewCity = (city) => {
+      changeArray(prev => {
+         const newA = [...prev, city];
+         localStorage.setItem('array', JSON.stringify(newA));
+         return newA;
+      });
+   }
+
+   const handleDelete = (cityName) => {
+      const updatedCities = array.filter(city => city.name !== cityName);
+      changeArray(updatedCities);
+      localStorage.setItem('array', JSON.stringify(updatedCities));
+   };
+
+   return (
+      <Container>
+         <Header />
+         <Search onSearch={addNewCity} />
+         {array && <CityList setForecastData={setForecastData} cities={array} onDelete={handleDelete} />}
+         <HourlyForecast forecastData={forecastData} />
+         <WeatherFW />
+         <Gallery />
+         <Footer />
+         <GlobalStyle />
+      </Container>
+   );
+
   const [forecastData, setForecastData] = useState(null);
 
 
@@ -62,12 +92,5 @@ export const App = () => {
     <GlobalStyle />
     </>
   );
-    
+
 };
-
-export default App;
-
-
-
-
-
