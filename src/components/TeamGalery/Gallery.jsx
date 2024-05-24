@@ -1,7 +1,7 @@
-// import {team} from "../../team"
-// import { Splide, SplideSlide } from '@splidejs/react-splide';
-// import {Text, Image, Div, Info, Heading, Name} from './Gallery.styled'
-// import '@splidejs/react-splide/css';
+import {team} from "../../team"
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import {Text, Image, Div, Info, Heading, Name} from './Gallery.styled'
+import '@splidejs/react-splide/css';
 
 
 
@@ -13,8 +13,7 @@ export function Gallery(){
         autoplay     : false,
         pauseOnHover : true,
         resetProgress: false,
-        // height: '500px',
-        // width: '400px',
+        
        
         
       };
