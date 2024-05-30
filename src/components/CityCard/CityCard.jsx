@@ -29,7 +29,7 @@ const CityCard = ({ city, onDelete, onWeeklyWeather, onHourlyWeather }) => {
       </CityInfo>
       <Time>{new Date().toLocaleTimeString()}</Time>
       <ForecastLinks>
-        <ForecastButton onClick={() => onWeeklyWeather(city.coord)}>Hourly forecast</ForecastButton>
+        <ForecastButton onClick={() => onHourlyWeather(city.coord)}>Hourly forecast</ForecastButton>
         <ForecastButton onClick={() => onWeeklyWeather(city.coord)}>Weekly forecast</ForecastButton>
       </ForecastLinks>
       <DateText>{new Date().toLocaleDateString()}</DateText>
