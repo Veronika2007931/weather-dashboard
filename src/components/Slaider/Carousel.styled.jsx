@@ -6,6 +6,10 @@ export const CarouselContainer = styled.div`
   height: 300px;
   overflow: hidden;
   margin: auto;
+
+  @media screen and (max-width: 834px){
+    display: none;
+  }
 `;
 
 export const CarouselInner = styled.div`
@@ -44,3 +48,4 @@ export const CarouselButton = styled.button`
     right: 10px;
   }
 `;
+
