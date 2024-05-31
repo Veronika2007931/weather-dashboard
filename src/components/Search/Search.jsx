@@ -32,7 +32,7 @@ export const Search = ({ onSearch }) => {
                 //     return newA
                 // })
             })
-        e.currentTarget.reset()
+        // e.currentTarget.reset()
     }
     // const click=useCallback(async()=>
     //     await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${r.current.value}&appid=3ca8038fbb40321d1e03df9a10bbb2c2`)
