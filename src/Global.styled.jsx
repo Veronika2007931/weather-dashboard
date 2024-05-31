@@ -30,6 +30,9 @@ p,
     text-decoration: none
 
   }
+  button{
+    border: none;
+  }
 
   
     

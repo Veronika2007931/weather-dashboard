@@ -1,10 +1,5 @@
 import {useState, useEffect} from 'react';
-
-import img1 from './img/Rectangle 6.jpg';
-import img2 from './img/Rectangle 7.jpg';
-import img3 from './img/Rectangle 8.jpg';
-import img4 from './img/Rectangle 9.jpg';
-
+import { SectionTitle, NewsList, NewsItem, Img, Text, Button } from './News.styled';
 
 export function NewsSection() {
     const [newsData, setNewsData] = useState();
@@ -25,32 +20,18 @@ export function NewsSection() {
    
     return (
     <section className="news-section">
-        <h2 className="news-title">Interacting with our pets</h2>
+        <SectionTitle className="news-title">Interacting with our pets</SectionTitle>
+            <NewsList>
+               {newsData && newsData.map((newsItem, index) => {
+          return  <NewsItem key={index} className="news-item">
+                <Img src={newsItem.urlToImage} alt={``} />
+                <Text>{newsItem.title}</Text>
+            </NewsItem>
+        })} 
+        </NewsList>
+        
 
-        {newsData && newsData.map((newsItem, index) => {
-          return  <div key={index} className="news-item">
-                <img src={newsItem.urlToImage} alt={``} />
-                <p>{newsItem.title}</p>
-            </div>
-        })}
-
-        {/* <div className="news-item">
-            <img src={img1} alt="News 1" />
-            <p>Rescue pups pose as ghosts in festive photo shoot</p>
-        </div>
-        <div className="news-item">
-            <img src={img2} alt="News 2" />
-            <p>Cat interrupts morning coffee on sunny Washington morning</p>
-        </div>
-        <div className="news-item">
-            <img src={img3} alt="News 3" />
-            <p>New study finds dogs pay more attention to women</p>
-        </div>
-        <div className="news-item">
-            <img src={img4} alt="News 4" />
-            <p>Petting dogs gives health benefit, even if they are not yours</p>
-        </div> */}
-        <button className="see-more-btn">See more</button>
+        <Button className="see-more-btn">See more</Button>
     </section>
     );
 }

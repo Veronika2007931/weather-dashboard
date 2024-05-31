@@ -26,19 +26,12 @@ export const Search = ({ onSearch }) => {
         .then(resp=>resp.json())
             .then(res => {
                 onSearch(res)
-                // changeArray(prev => {
-                //     const newA = [...prev, res]; localStorage.setItem('array', JSON.stringify(newA));
-
-                //     return newA
-                // })
+               
             })
-        // e.currentTarget.reset()
+        
+        e.target.reset()
     }
-    // const click=useCallback(async()=>
-    //     await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${r.current.value}&appid=3ca8038fbb40321d1e03df9a10bbb2c2`)
-    //     .then(resp=>resp.json())
-    //     .then(res=>{changeArray(prev=>{const newA=[...prev,res];localStorage.setItem('array',JSON.stringify(newA));return newA})})
-    // ,[array])
+    
     return(
         <Hero>
             <div>
