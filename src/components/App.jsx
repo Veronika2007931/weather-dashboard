@@ -24,19 +24,17 @@ export const App = () => {
   ];
 
   const [array, changeArray] = useState(localStorage.getItem('array') === null ? [] : JSON.parse(localStorage.getItem('array')));
-
   const [weekly, setWeeklyShow] = useState(false); 
+  const [hourly, setHourlyShow] = useState(false); 
   const [coord, setCoord] = useState(null);
 
   const showWeeklyForecast = (coord) => {
-    console.log(coord)
     setWeeklyShow(true);
     setCoord(coord)
   }
 
   const showHourlyWeather = (coord) => {
-    console.log(coord)
-    setWeeklyShow(true);
+    setHourlyShow(true)
     setCoord(coord)
   }
 
@@ -62,20 +60,14 @@ export const App = () => {
       <Header />
       <Search onSearch={addNewCity} />
       <Container>
-        {array && <CityList setForecastData={setForecastData} cities={array} onDelete={handleDelete} />}
-        <HourlyForecast forecastData={forecastData} />
-        <WeatherFW />
-
-      
-
-        {array && <CityList 
+      {array && <CityList 
         setForecastData={setForecastData} 
         cities={array} 
         onDelete={handleDelete} 
         onWeeklyWeather={showWeeklyForecast}
         onHourlyWeather={showHourlyWeather}/>}
-        <HourlyForecast forecastData={forecastData} />
-        {weekly && <WeatherFW city={coord}/>}
+        {hourly && <HourlyForecast coord={coord} forecastData={forecastData} />}
+        {weekly && <WeatherFW coord={coord}/>}
 
         <Gallery />
          <NewsSection/>

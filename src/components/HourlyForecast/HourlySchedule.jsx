@@ -23,22 +23,11 @@ ChartJS.register(
   
 
 
-export const HourlySchedule = ({forecastData}) => {
+export const HourlySchedule = ({coord}) => {
     const [hoursWeather, setHoursWeather] = useState()
-    const [cityLon, setCityLon] = useState('')
-    const [cityLat, setCityLat] = useState('')
     const [xAxisMax, setXAxisMax] = useState(20)
     const [aspectRatio, setAspectRatio] = useState(2)
 
-    useEffect(() => {
-        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${forecastData}&limit=5&appid=40207e285e43c5b8e49ba7f2599cdd4b`)
-        .then(res => res.json())
-        .then((cityData) => {
-            setCityLon(`${cityData[0].lon}`) 
-            setCityLat(`${cityData[0].lat}`)
-            getCity()
-        })
-    }, [forecastData, cityLon, cityLat])
 
     useEffect(() => {
         window.addEventListener('resize', () => {
@@ -69,12 +58,16 @@ export const HourlySchedule = ({forecastData}) => {
         })
     }, [])
 
-
-    async function getCity() {
+    useEffect(() => {
+        const cityLat = coord.lat;
+        const cityLon = coord.lon
+    
         fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${cityLat}&lon=${cityLon}&units=metric&appid=40207e285e43c5b8e49ba7f2599cdd4b`)
         .then(res => res.json())
         .then(data => setHoursWeather(data.hourly))
-    }
+    }, [coord]
+    )
+    
 
     function getTime() {
         const timeData = []
