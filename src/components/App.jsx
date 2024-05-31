@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { Header } from "./Header/Header";
+import CityList from "./CityCard/CityList";
+
 import { NewsSection } from "./News/news";
 import { Gallery } from "./TeamGalery/Gallery";
 import { Footer } from "./Footer/Footer"
@@ -7,6 +10,7 @@ import { HourlyForecast } from "./HourlyForecast/HourlyForecast";
 import { Search } from './Search/Search'
 import { GlobalStyle } from "Global.styled";
 import { Carousel } from "./Slaider/Carousel"
+import { WeatherFW } from "./WeatherForWeek/WeatherFW";
 
 
 
@@ -20,6 +24,22 @@ export const App = () => {
   ];
 
   const [array, changeArray] = useState(localStorage.getItem('array') === null ? [] : JSON.parse(localStorage.getItem('array')));
+
+  const [weekly, setWeeklyShow] = useState(false); 
+  const [coord, setCoord] = useState(null);
+
+  const showWeeklyForecast = (coord) => {
+    console.log(coord)
+    setWeeklyShow(true);
+    setCoord(coord)
+  }
+
+  const showHourlyWeather = (coord) => {
+    console.log(coord)
+    setWeeklyShow(true);
+    setCoord(coord)
+  }
+
 
   const addNewCity = (city) => {
     changeArray(prev => {
@@ -36,6 +56,7 @@ export const App = () => {
   };
   
   
+
   return (
     <>
       <Header />
@@ -44,6 +65,18 @@ export const App = () => {
         {array && <CityList setForecastData={setForecastData} cities={array} onDelete={handleDelete} />}
         <HourlyForecast forecastData={forecastData} />
         <WeatherFW />
+
+      
+
+        {array && <CityList 
+        setForecastData={setForecastData} 
+        cities={array} 
+        onDelete={handleDelete} 
+        onWeeklyWeather={showWeeklyForecast}
+        onHourlyWeather={showHourlyWeather}/>}
+        <HourlyForecast forecastData={forecastData} />
+        {weekly && <WeatherFW city={coord}/>}
+
         <Gallery />
          <NewsSection/>
          <Carousel slides={slides}/>
@@ -55,3 +88,8 @@ export const App = () => {
 };
 
 export default App;
+
+
+
+
+

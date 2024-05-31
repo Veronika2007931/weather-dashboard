@@ -1,4 +1,5 @@
-import React from 'react';
+import { WeatherFW } from 'components/WeatherForWeek/WeatherFW';
+import { useState } from 'react';
 import { FiTrash, FiHeart, FiRefreshCw } from 'react-icons/fi';
 import {
   CityCardContainer,
@@ -14,27 +15,22 @@ import {
   Button
 } from './CityCard.styled';
 
-const CityCard = ({ city, onDelete, onRefresh }) => {
-  // console.log(city.sys.country);
+const CityCard = ({ city, onDelete, onWeeklyWeather, onHourlyWeather }) => {
+
   const handleDelete = () => {
     onDelete(city.name);
   };
 
-  const handleRefresh = () => {
-    onRefresh(city.name);
-  };
-
   return (
+    <>   
     <CityCardContainer>
       <CityInfo>
-        <CityName>{city.name},
-          {/* {city.sys.country} */}
-        </CityName>
+        <CityName>{city.name}, {city.sys.country}</CityName>
       </CityInfo>
       <Time>{new Date().toLocaleTimeString()}</Time>
       <ForecastLinks>
-        <ForecastButton>Hourly forecast</ForecastButton>
-        <ForecastButton>Weekly forecast</ForecastButton>
+        <ForecastButton onClick={() => onHourlyWeather(city.coord)}>Hourly forecast</ForecastButton>
+        <ForecastButton onClick={() => onWeeklyWeather(city.coord)}>Weekly forecast</ForecastButton>
       </ForecastLinks>
       <DateText>{new Date().toLocaleDateString()}</DateText>
       <WeatherIcon src={`http://openweathermap.org/img/wn/${city.weather[0].icon}.png`} alt="Weather Icon" />
@@ -42,9 +38,10 @@ const CityCard = ({ city, onDelete, onRefresh }) => {
       <Buttons>
         <Button onClick={handleDelete}><FiTrash /></Button>
         <Button className="favorite"><FiHeart /></Button>
-        <Button onClick={handleRefresh}><FiRefreshCw /></Button>
+        <Button><FiRefreshCw /></Button>
       </Buttons>
     </CityCardContainer>
+    </>
   );
 }
 

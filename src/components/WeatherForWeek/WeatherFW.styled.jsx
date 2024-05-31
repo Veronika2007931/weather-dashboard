@@ -9,6 +9,7 @@ export const Container = styled.div`
     margin-left: auto;
     margin-right: auto;
     padding: 7px;
+    margin-top: 20px;
 
     @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
         width: ${(p) => p.theme.breakpoints.mobile};

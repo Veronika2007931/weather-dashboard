@@ -4,8 +4,6 @@ import {Text, Image, Div, Info, Heading, Name} from './Gallery.styled'
 import '@splidejs/react-splide/css';
 
 
-
-
 export function Gallery(){
     const options = {
         type         : 'loop',
@@ -13,8 +11,7 @@ export function Gallery(){
         autoplay     : false,
         pauseOnHover : true,
         resetProgress: false,
-        // height: '500px',
-        // width: '400px',
+        
        
         
       };
@@ -27,6 +24,7 @@ export function Gallery(){
          
       }
     return(
+
         <Div style={ { position: 'relative' } }>
           <Heading>Наша команда</Heading>
           <Splide aria-labelledby="My Favorite Images" options={ options } >
