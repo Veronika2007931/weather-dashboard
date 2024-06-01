@@ -3,16 +3,17 @@ import { Container, HourlyForecastSection, SubTitle } from './HourlyForecast.sty
 
 
 
-export const HourlyForecast = ({forecastData}) => {
+export const HourlyForecast = ({ forecastData, coord}) => {
+    console.log(forecastData)
     return (
         <>
-            {forecastData ?
+            
             <HourlyForecastSection >
                 <Container >
                     <SubTitle>Hourly forecast</SubTitle>
-                    <HourlySchedule forecastData={forecastData} />
+                    <HourlySchedule coord={coord} forecastData={forecastData} />
                 </Container>
-            </HourlyForecastSection> : null}
+            </HourlyForecastSection>
         </>
     )
 }

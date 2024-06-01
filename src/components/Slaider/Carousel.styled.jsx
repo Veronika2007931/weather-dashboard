@@ -6,6 +6,7 @@ export const CarouselContainer = styled.div`
   height: 300px;
   overflow: hidden;
   margin: auto;
+  margin-bottom: 48px;
 
   @media screen and (max-width: 834px){
     display: none;
