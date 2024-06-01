@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import './News.css';
 
 import img1 from './img/Rectangle 6.jpg';
 import img2 from './img/Rectangle 7.jpg';
