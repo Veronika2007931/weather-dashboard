@@ -1,18 +1,23 @@
 import { Backdrop, FieldsItem, ModalBody, ModalBtn, ModalInfo, ModalTitle } from "./Modal.styled"
 
-export const Modal = ({ closeModal, regis, check}) => {    
+export const Modal = ({ closeModal, regis, check }) => {
+
+  // при кліку на ескейп закриває
     const closeOnEsc=(e)=>{
         if(e.code==='Escape'){
             closeModal()
             window.removeEventListener('keydown', closeOnEsc)
         }
-    }
+  }
+  // при кліку на екран закриває
     window.addEventListener('keydown', closeOnEsc)
     const close=(e)=>{
         e.target===e.currentTarget&&closeModal()
         window.removeEventListener('keydown', closeOnEsc)
     }
+// Зупиняє перезавантаження сторінки при натисканні на кнопку "submit".
 
+// Отримує доступ до елементів форми
     const singUp = (e) => {
         e.preventDefault()
         const form = e.currentTarget.elements
@@ -52,13 +57,13 @@ export const Modal = ({ closeModal, regis, check}) => {
                         </FieldsItem>
                         <FieldsItem>
                             <label>Password
-                                <input type="text" name="password" placeholder="Password"/> 
+                                <input type="text" name="password" placeholder="Password"/>
                             </label>
                         </FieldsItem>
                     </ModalInfo>
                 <ModalBtn type="submit">{check()?'Change':'Sing up'}</ModalBtn>
                 {check()||<p>Already have an account? idc</p>}
             </ModalBody>
-        </Backdrop>        
+        </Backdrop>
     )
 }
